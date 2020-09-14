@@ -58,6 +58,7 @@ describe('openid domain layer', () => {
             expect(response).to.deep.equal({
               email: 'email@example.com',
               email_verified: true,
+              github_access_token: 'MOCK_TOKEN',
               name: 'some name',
               picture: 'picture.jpg',
               preferred_username: 'username',
@@ -166,7 +167,8 @@ describe('openid domain layer', () => {
             'email_verified',
             'updated_at',
             'iss',
-            'aud'
+            'aud',
+            'github_access_token'
           ],
           display_values_supported: ['page', 'popup'],
           id_token_signing_alg_values_supported: ['RS256'],

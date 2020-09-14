@@ -25,7 +25,8 @@ const getUserInfo = accessToken =>
           updated_at: NumericDate(
             // OpenID requires the seconds since epoch in UTC
             new Date(Date.parse(userDetails.updated_at))
-          )
+          ),
+          github_access_token: accessToken
         };
         logger.debug('Resolved claims: %j', claims, {});
         return claims;
@@ -136,7 +137,8 @@ const getConfigFor = host => ({
     'email_verified',
     'updated_at',
     'iss',
-    'aud'
+    'aud',
+    'github_access_token'
   ]
 });
 
