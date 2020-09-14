@@ -29,3 +29,4 @@ jobs:
         AWS_SAM_REGION: ${{ secrets.AWS_SAM_REGION }}
         AWS_SAM_BUCKET_NAME: ${{ secrets.AWS_SAM_BUCKET_NAME }}
     - run: npm run test
+    - run: npm run deploy
