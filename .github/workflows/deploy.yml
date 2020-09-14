@@ -15,7 +15,7 @@ jobs:
       COGNITO_REDIRECT_URI: ${{ secrets.COGNITO_REDIRECT_URI }}
       AWS_SAM_STAGE_NAME: ${{ secrets.AWS_SAM_STAGE_NAME }}
       AWS_SAM_STACK_NAME: ${{ secrets.AWS_SAM_STACK_NAME }}
-      AWS_SAM_REGION: ${{ secrets.AWS_SAM_REGION }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       AWS_SAM_BUCKET_NAME: ${{ secrets.AWS_SAM_BUCKET_NAME }}
     steps:
     - uses: actions/checkout@v2
@@ -27,5 +27,4 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
     - run: npm ci
-    - run: npm run build
     - run: npm run deploy
