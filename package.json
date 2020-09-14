@@ -20,9 +20,7 @@
     "prerelease": "npm run lint && npm run test && npm run build",
     "release": "standard-version",
     "deploy": "./scripts/deploy.sh",
-    "coverage": "jest --runInBand --coverage",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "coverage": "jest --runInBand --coverage"
   },
   "author": "",
   "license": "ISC",
