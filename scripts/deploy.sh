@@ -8,15 +8,7 @@ PROJECT_ROOT="$SCRIPT_DIR"/.. # Figure out where the project directory is
 require_binary aws
 require_binary sam
 
-# Ensure configuration is present
-
-if [ ! -f "$PROJECT_ROOT/config.sh" ]; then
-  echo "ERROR: config.sh is missing. Copy example-config.sh and modify as appropriate."
-  echo "   cp example-config.sh config.sh"
-  exit 1
-fi
-source ./config.sh
-
+# Deploy
 
 OUTPUT_TEMPLATE_FILE="$PROJECT_ROOT/serverless-output.yml"
 aws s3 mb "s3://$BUCKET_NAME" --region "$REGION" || true

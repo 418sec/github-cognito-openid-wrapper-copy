@@ -4,8 +4,8 @@ const { GITHUB_CLIENT_ID } = require('./config');
 const logger = require('./connectors/logger');
 
 const KEY_ID = 'jwtRS256';
-const cert = require('../jwtRS256.key');
-const pubKey = require('../jwtRS256.key.pub');
+const cert = process.env.JWT_RS256_KEY;
+const pubKey = process.env.JWT_RS256_PUBLIC_KEY;
 
 module.exports = {
   getPublicKey: () => ({
