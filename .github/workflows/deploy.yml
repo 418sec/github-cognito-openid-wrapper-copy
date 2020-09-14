@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+    - uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - run: npm ci
+    - run: npm run build
+      env:
+        JWT_RS256_KEY: ${{ secrets.JWT_RS256_KEY }}
+        JWT_RS256_PUBLIC_KEY: ${{ secrets.JWT_RS256_PUBLIC_KEY }}
+        GH_CLIENT_ID: ${{ secrets.GH_CLIENT_ID }}
+        GH_CLIENT_SECRET: ${{ secrets.GH_CLIENT_SECRET }}
+        COGNITO_REDIRECT_URI: ${{ secrets.COGNITO_REDIRECT_URI }}
+        AWS_SAM_STAGE_NAME: ${{ secrets.AWS_SAM_STAGE_NAME }}
+        AWS_SAM_STACK_NAME: ${{ secrets.AWS_SAM_STACK_NAME }}
+        AWS_SAM_REGION: ${{ secrets.AWS_SAM_REGION }}
+        AWS_SAM_BUCKET_NAME: ${{ secrets.AWS_SAM_BUCKET_NAME }}
+    - run: npm run test
