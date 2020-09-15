@@ -41,7 +41,9 @@ Parameters:
     Type: String
     Default: "https://github.com"
     MinLength: 1
-  StageNameParameter:
+  JwtRs256KeyParameter:
+    Type: String
+  JwtRs256PublicKeyParameter:
     Type: String
 
 Resources:
