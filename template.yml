@@ -21,9 +21,9 @@ Globals:
         GITHUB_LOGIN_URL:
           Ref: GitHubLoginUrlParameter
         JWT_RS256_KEY:
-          Ref: JwtRs256Key
+          Ref: JwtRs256KeyParameter
         JWT_RS256_PUBLIC_KEY:
-          Ref: JwtRs256PublicKey
+          Ref: JwtRs256PublicKeyParameter
         
 
 Parameters:
