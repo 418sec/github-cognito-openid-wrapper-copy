@@ -13,4 +13,4 @@ require_binary sam
 OUTPUT_TEMPLATE_FILE="$PROJECT_ROOT/serverless-output.yml"
 aws s3 mb "s3://$AWS_SAM_BUCKET_NAME" --region "$AWS_DEFAULT_REGION" || true
 sam package --template-file template.yml --output-template-file "$OUTPUT_TEMPLATE_FILE"  --s3-bucket "$AWS_SAM_BUCKET_NAME"
-sam deploy --region "$AWS_DEFAULT_REGION" --template-file "$OUTPUT_TEMPLATE_FILE" --stack-name "$AWS_SAM_STACK_NAME" --parameter-overrides GitHubClientIdParameter="$GITHUB_CLIENT_ID" GitHubClientSecretParameter="$GITHUB_CLIENT_SECRET" CognitoRedirectUriParameter="$COGNITO_REDIRECT_URI" StageNameParameter="$AWS_SAM_STAGE_NAME" --capabilities CAPABILITY_IAM
+sam deploy --region "$AWS_DEFAULT_REGION" --template-file "$OUTPUT_TEMPLATE_FILE" --stack-name "$AWS_SAM_STACK_NAME" --parameter-overrides GitHubClientIdParameter="$GITHUB_CLIENT_ID" GitHubClientSecretParameter="$GITHUB_CLIENT_SECRET" CognitoRedirectUriParameter="$COGNITO_REDIRECT_URI" StageNameParameter="$AWS_SAM_STAGE_NAME" JwtRs256Key="$JWT_RS256_KEY" JwtRs256PublicKey="$JWT_RS256_PUBLIC_KEY" --capabilities CAPABILITY_IAM

@@ -20,6 +20,11 @@ Globals:
           Ref: GitHubUrlParameter
         GITHUB_LOGIN_URL:
           Ref: GitHubLoginUrlParameter
+        JWT_RS256_KEY:
+          Ref: JwtRs256Key
+        JWT_RS256_PUBLIC_KEY:
+          Ref: JwtRs256PublicKey
+        
 
 Parameters:
   GitHubClientIdParameter:
