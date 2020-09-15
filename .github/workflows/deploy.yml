@@ -10,8 +10,8 @@ jobs:
     env:
       JWT_RS256_KEY: ${{ secrets.JWT_RS256_KEY }}
       JWT_RS256_PUBLIC_KEY: ${{ secrets.JWT_RS256_PUBLIC_KEY }}
-      GH_CLIENT_ID: ${{ secrets.GH_CLIENT_ID }}
-      GH_CLIENT_SECRET: ${{ secrets.GH_CLIENT_SECRET }}
+      GITHUB_CLIENT_ID: ${{ secrets.GH_CLIENT_ID }}
+      GITHUB_CLIENT_SECRET: ${{ secrets.GH_CLIENT_SECRET }}
       COGNITO_REDIRECT_URI: ${{ secrets.COGNITO_REDIRECT_URI }}
       AWS_SAM_STAGE_NAME: ${{ secrets.AWS_SAM_STAGE_NAME }}
       AWS_SAM_STACK_NAME: ${{ secrets.AWS_SAM_STACK_NAME }}
