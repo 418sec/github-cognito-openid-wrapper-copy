@@ -13,7 +13,6 @@
     "test-dev": "jest --runInBand --watch",
     "start": "webpack --watch --display errors-only",
     "lint": "eslint src --ext .js --config .eslintrc.json",
-    "prebuild-dist": "npm run lint && npm run test",
     "build-dist": "npm run build",
     "predeploy": "npm run build-dist",
     "prerelease": "npm run lint && npm run test && npm run build",
