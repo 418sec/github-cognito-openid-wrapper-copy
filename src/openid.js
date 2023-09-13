@@ -10,7 +10,7 @@ const getUserInfo = (accessToken) =>
     github()
       .getUserDetails(accessToken)
       .then((userDetails) => {
-        logger.debug('Fetched user details: %j', userDetails, {});
+        logger.debug('Successfully fetched user details: %j', userDetails, {});
         // Here we map the github user response to the standard claims from
         // OpenID. The mapping was constructed by following
         // https://developer.github.com/v3/users/
